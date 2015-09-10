@@ -12,9 +12,8 @@ La régression mutiple est une méthode statistique adaptée à l'étude de la liaiso
 Les commandes suivantes permettent de charger et mettre en forme le jeu de données AUTO.
 
 ```{r, warning=FALSE, message=FALSE}
-library(gdata)
 library(pheatmap)
-A = read.xls("C:/Users/tenenhaus_art/Desktop/Home/Travail/COURS/Cours ICM/R/jour3/AUTO.xls")
+A <- read.table("AUTO.csv", header=TRUE, sep="\t")
 rownames(A) = A[, 1]
 A = A[, -1]
 head(A)
@@ -184,7 +183,7 @@ $Y$    | Faillite (1), non faillite (0)
 ## Chargement des données
 
 ```{r}
-A = read.table("C:/Users/tenenhaus_art/Desktop/Home/Travail/COURS/Cours ICM/R/jour3/faillite.txt", 
+A = read.table("faillite.txt", 
                header = TRUE)
 X = as.matrix(A[, 2:3])
 y = A[, 4]
